@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 import { ref, Ref } from 'vue';
-import TButton from '@components/button/index.vue';
+import TButton from '../../components/tst1.vue';
 const tstVal: Ref<string> = ref('')
 
 const handleChange = (val: string) => {

@@ -8,7 +8,7 @@
 
 <script lang='ts'>
 import { defineComponent } from 'vue';
-import Tst from './tst.vue';
+import Tst from './tst2.vue';
 export default defineComponent({
   name: 'XeButton',
   components: { Tst },
