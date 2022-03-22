@@ -1,11 +1,11 @@
 <template>
   <view class=''>
-    {{ t }}
+    {{ t.t }}
   </view>
 </template>
 
 <script lang='ts'>
-import { defineComponent, inject } from 'vue';
+import { defineComponent, inject, watch } from 'vue';
 import Tst from './tst2.vue';
 export default defineComponent({
   name: 'XeButton',
@@ -18,7 +18,7 @@ export default defineComponent({
   },
   emits: ['change', 'update:value'],
   setup(props, { emit }) {
-    const t = inject('tstKey')
+    const t = inject<any>('tstKey')
     console.info(t)
     return {
       t,
