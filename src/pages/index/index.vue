@@ -9,9 +9,17 @@
 </template>
 
 <script setup lang="ts">
-import { ref, Ref } from 'vue';
+import { ref, Ref, provide, computed } from 'vue';
 import TButton from '../../components/tst1.vue';
-const tstVal: Ref<string> = ref('')
+const tstVal: Ref<string> = ref('10000')
+
+const tstPrivide = computed(() => {
+  return tstVal.value;
+})
+
+provide('tstKey', {
+  t: tstPrivide
+})
 
 const handleChange = (val: string) => {
   console.info(val)

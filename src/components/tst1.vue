@@ -1,13 +1,12 @@
 <template>
   <view class=''>
-    <input @input="handleChange" placeholder="输入内容看"/>
-    <Tst :a="props.value" :data-xxxx="props.value"/>
     {{ props.value }}
+    {{ t }}
   </view>
 </template>
 
 <script lang='ts'>
-import { defineComponent } from 'vue';
+import { defineComponent, inject } from 'vue';
 import Tst from './tst2.vue';
 export default defineComponent({
   name: 'XeButton',
@@ -20,12 +19,10 @@ export default defineComponent({
   },
   emits: ['change', 'update:value'],
   setup(props, { emit }) {
-    const handleChange = (e: any) => {
-      emit('update:value', e.target.value);
-      emit('change', e.target.value);
-    }
+    const t = inject('tstKey')
+    console.info(t)
     return {
-      handleChange,
+      t,
       props
     }
   }
