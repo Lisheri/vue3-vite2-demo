@@ -1,6 +1,5 @@
 <template>
   <view class=''>
-    {{ props.value }}
     {{ t }}
   </view>
 </template>
